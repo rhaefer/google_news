@@ -5,14 +5,15 @@ import os
 from datetime import datetime, timedelta
 import re
 from dateutil import parser
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 # ✅ Initialize Supabase connection
-SUPABASE_URL = "https://nyngjfovyljrzeqnetgy.supabase.co"  # Replace with your Supabase project URL
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im55bmdqZm92eWxqcnplcW5ldGd5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczMDgyNzQ4MCwiZXhwIjoyMDQ2NDAzNDgwfQ.3X_jAe8LdkqnBHTyIJyh5Y7_YL5KlxQDhfIup9FKh7c"  # Replace with your Supabase Key
+
 supabase_client = supabase.create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # ✅ SerpAPI configuration
-SERPAPI_KEY = "0c1c9a768d8747428727639c9318efcf7ae832a0bb19c8271f5e51471739e869"
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
 # ✅ Define major news sources (Higher popularity boost)
 TOP_NEWS_SOURCES = ["nytimes.com", "bbc.com", "forbes.com", "washingtonpost.com", "theguardian.com"]
